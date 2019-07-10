@@ -1,5 +1,23 @@
 version: "3.7"
 services:
+    letsencrypt:
+        image: linuxserver/letsencrypt
+        container_name: letsencrypt
+        ports:
+          - 443:443
+        volumes:
+          - /home/pi/docker-volumes/letsencrypt/config:/config
+        restart:
+          always
+        depends_on:
+            - nextcloud
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - EMAIL=eizvertins.edgars@gmail.com
+            - URL=eizvertins.com
+            - SUBDOMAINS=cloud,edgars
+            - TZ=Europe/Riga
     nextcloud:
         image: linuxserver/nextcloud
         container_name: nextcloud
@@ -13,3 +31,4 @@ services:
         ports:
             - 1500:443
         restart: unless-stopped
+    
