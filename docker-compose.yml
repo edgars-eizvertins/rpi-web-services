@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+    nextcloud:
+        image: linuxserver/nextcloud
+        container_name: nextcloud
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Riga
+        volumes:
+            - /home/pi/docker-volumes/ncdata:/config
+            - /mnt/toshiba750/ncdata:/data
+        ports:
+            - 1500:443
+        restart: unless-stopped
