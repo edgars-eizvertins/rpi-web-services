@@ -1,11 +1,11 @@
 version: "3.7"
 services:
     nginx-proxy-manager:
-        build: .
+        container_name: nginx-proxy
         ports:
-        - "8181:8181"
-        - "8080:8080"
-        - "4443:4443"
+        - 8181:8181
+        - 8080:8080
+        - 4443:4443
         volumes:
         - /home/pi/docker-volumes/nginx-proxy-manager:/config:rw
     nextcloud:
