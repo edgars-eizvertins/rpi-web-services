@@ -2,21 +2,23 @@ version: "3.7"
 services:
     nginx-proxy-manager:
         image: jc21/nginx-proxy-manager:latest
-        container_name: nginx-proxy        
+        container_name: nginx-proxy-manager
         restart: always
         ports:
             - 80:80
             - 81:81
             - 443:443
         volumes:
-            - /home/pi/docker-volumes/nginx-proxy-manager/config.json:/app/config/production.json
+            - /home/pi/docker-volumes/nginx-proxy-manager/config:/app/config/config.json
             - /home/pi/docker-volumes/nginx-proxy-manager/data:/data
             - /home/pi/docker-volumes/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
         depends_on:
             - nginx-proxy-db
         environment:
-        # if you want pretty colors in your docker logs:
             - FORCE_COLOR=1
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Riga
     nginx-proxy-db:
         image: linuxserver/mariadb
         container_name: nginx-proxy-db
