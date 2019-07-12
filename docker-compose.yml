@@ -9,7 +9,7 @@ services:
             - 81:81
             - 443:443
         volumes:
-            - /home/pi/docker-volumes/nginx-proxy-manager/config:/app/config/config.json
+            - /home/pi/docker-volumes/nginx-proxy-manager/config:/app/config/production.json
             - /home/pi/docker-volumes/nginx-proxy-manager/data:/data
             - /home/pi/docker-volumes/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
         depends_on:
