@@ -20,7 +20,6 @@ services:
     nginx-proxy-db:
         image: linuxserver/mariadb
         container_name: nginx-proxy-db
-        restart: always
         environment:
             - PUID=1000
             - PGID=1000
@@ -31,6 +30,9 @@ services:
             - MYSQL_PASSWORD=dbMpass101mM
         volumes:
           - /home/pi/docker-volumes/nginx-proxy-db/config:/config
+        ports:
+            - 3306:3306
+        restart: unless-stopped
     nextcloud:
         image: linuxserver/nextcloud
         container_name: nextcloud
