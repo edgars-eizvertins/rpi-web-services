@@ -28,7 +28,7 @@ services:
             - TZ=Europe/Riga
             - MYSQL_ROOT_PASSWORD=dbMpass101mM            
             - MYSQL_DATABASE=nginxproxy
-            - MYSQL_USER=user
+            - MYSQL_USER=userDB
             - MYSQL_PASSWORD=dbMpass101mM
         volumes:
           - /home/pi/docker-volumes/nginx-proxy-db/config:/config
