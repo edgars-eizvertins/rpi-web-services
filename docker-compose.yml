@@ -1,23 +1,13 @@
 version: "3.7"
 services:
-    letsencrypt:
-        image: linuxserver/letsencrypt
-        container_name: letsencrypt
+    nginx-proxy-manager:
+        build: .
         ports:
-          - 443:443
+        - "8181:8181"
+        - "8080:8080"
+        - "4443:4443"
         volumes:
-          - /home/pi/docker-volumes/letsencrypt/config:/config
-        restart:
-          always
-        depends_on:
-            - nextcloud
-        environment:
-            - PUID=1000
-            - PGID=1000
-            - EMAIL=eizvertins.edgars@gmail.com
-            - URL=eizvertins.com
-            - SUBDOMAINS=cloud,edgars
-            - TZ=Europe/Riga
+        - /home/pi/docker-volumes/nginx-proxy-manager:/config:rw
     nextcloud:
         image: linuxserver/nextcloud
         container_name: nextcloud
