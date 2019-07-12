@@ -18,16 +18,19 @@ services:
         # if you want pretty colors in your docker logs:
             - FORCE_COLOR=1
     nginx-proxy-db:
-        image: mariadb:latest
+        image: linuxserver/mariadb
         container_name: nginx-proxy-db
         restart: always
         environment:
-          MYSQL_ROOT_PASSWORD: "npmRootPass101"
-          MYSQL_DATABASE: "npm"
-          MYSQL_USER: "npm"
-          MYSQL_PASSWORD: "npmRootPass101"
+            - PUID=1000
+            - PGID=1000
+            - MYSQL_ROOT_PASSWORD=dbMpass101mM
+            - TZ=Europe/Riga
+            - MYSQL_DATABASE=nginxproxy
+            - MYSQL_USER=user
+            - MYSQL_PASSWORD=dbMpass101mM
         volumes:
-          - /home/pi/docker-volumes/nginx-proxy-db/data/mysql:/var/lib/mysql
+          - /home/pi/docker-volumes/nginx-proxy-db/config:/config
     nextcloud:
         image: linuxserver/nextcloud
         container_name: nextcloud
