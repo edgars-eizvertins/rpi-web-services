@@ -3,7 +3,7 @@ services:
     nginx-proxy-manager:
         image: jc21/nginx-proxy-manager:latest
         container_name: nginx-proxy-manager
-        restart: always
+        restart: unless-stopped
         ports:
             - 80:80
             - 81:81
@@ -25,8 +25,8 @@ services:
         environment:
             - PUID=1000
             - PGID=1000
-            - MYSQL_ROOT_PASSWORD=dbMpass101mM
             - TZ=Europe/Riga
+            - MYSQL_ROOT_PASSWORD=dbMpass101mM            
             - MYSQL_DATABASE=nginxproxy
             - MYSQL_USER=user
             - MYSQL_PASSWORD=dbMpass101mM
