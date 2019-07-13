@@ -39,12 +39,12 @@ services:
             - /dev/vchiq:/dev/vchiq 
             - /dev/vcsm:/dev/vcsm
         volumes:
-            - /home/pi/docker-volumes/rpi-monitor/opt/vc:/opt/vc 
-            - /home/pi/docker-volumes/rpi-monitor/boot:/boot 
-            - /home/pi/docker-volumes/rpi-monitor/sys:/dockerhost/sys:ro 
-            - /home/pi/docker-volumes/rpi-monitor/etc:/dockerhost/etc:ro 
-            - /home/pi/docker-volumes/rpi-monitor/proc:/dockerhost/proc:ro 
-            - /home/pi/docker-volumes/rpi-monitor/usr/lib:/dockerhost/usr/lib:ro 			
+            - /home/pi/docker-volumes/rpi-monitor/opt/vc:/opt/vc
+            - /home/pi/docker-volumes/rpi-monitor/boot:/boot
+            - /home/pi/docker-volumes/rpi-monitor/sys:/dockerhost/sys:ro
+            - /home/pi/docker-volumes/rpi-monitor/etc:/dockerhost/etc:ro
+            - /home/pi/docker-volumes/rpi-monitor/proc:/dockerhost/proc:ro
+            - /home/pi/docker-volumes/rpi-monitor/usr/lib:/dockerhost/usr/lib:ro
         ports:
             - 8888:8888
         restart: unless-stopped
