@@ -6,12 +6,13 @@ services:
         cap_add:
           - NET_ADMIN
         environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Europe/Riga
-          - URL=eizvertins.com
-          - SUBDOMAINS=cloud
-          - VALIDATION=http         
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Riga
+            - URL=eizvertins.com
+            - SUBDOMAINS=cloud
+            - VALIDATION=http 
+            - EMAIL=eizvertins.edgars@gmail.com
         volumes:
           - /home/pi/docker-volumes/letsencrypt/config:/config
         ports:
