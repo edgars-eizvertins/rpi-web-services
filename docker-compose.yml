@@ -10,7 +10,7 @@ services:
             - PGID=1000
             - TZ=Europe/Riga
             - URL=eizvertins.com
-            - SUBDOMAINS=cloud
+            - SUBDOMAINS=cloud,monitor
             - VALIDATION=http 
             - EMAIL=eizvertins.edgars@gmail.com
         volumes:
@@ -32,6 +32,10 @@ services:
         ports:
             - 1500:443
         restart: unless-stopped
+        deploy:
+            resources:
+                limits:
+                    cpus: '3.00'
     rpi-monitor:
         image: michaelmiklis/rpi-monitor
         container_name: rpi-monitor
