@@ -52,4 +52,15 @@ services:
         ports:
             - 8888:8888
         restart: unless-stopped
-    
+    ghost-edgars:
+        image: ghost
+        container_name: ghost-edgars
+        restart: unless-stopped
+        ports:
+            - 3001:2368
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Riga
+        volumes:
+            - /home/pi/docker-volumes/ghost/edgars:/var/lib/ghost/content
