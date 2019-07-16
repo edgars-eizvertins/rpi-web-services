@@ -10,7 +10,7 @@ services:
             - PGID=1000
             - TZ=Europe/Riga
             - URL=eizvertins.com
-            - SUBDOMAINS=cloud,monitor
+            - SUBDOMAINS=cloud,monitor,edgars
             - VALIDATION=http 
             - EMAIL=eizvertins.edgars@gmail.com
         volumes:
