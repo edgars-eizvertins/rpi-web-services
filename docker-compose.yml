@@ -62,5 +62,6 @@ services:
             - PUID=1000
             - PGID=1000
             - TZ=Europe/Riga
+            - url=https://edgars.eizvertins.com
         volumes:
             - /home/pi/docker-volumes/ghost/edgars:/var/lib/ghost/content
