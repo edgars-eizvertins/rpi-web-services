@@ -17,5 +17,6 @@ https://hub.docker.com/r/linuxserver/nextcloud
 Use docker compose and yaml file
 Rescan file system
 docker exec --user 1000 nextcloud php /config/www/nextcloud/occ
+docker-compose exec --user 1000 nextcloud php /config/www/nextcloud/occ
 
 4. 
