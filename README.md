@@ -26,4 +26,6 @@ docker-compose exec --user 1000 nextcloud php /config/www/nextcloud/occ config:s
 docker-compose exec --user 1000 nextcloud php /config/www/nextcloud/occ config:system:set preview_max_y --value 2048
 docker-compose exec --user 1000 nextcloud php /config/www/nextcloud/occ config:system:set jpeg_quality --value 60
 
+docker-compose exec --user 1000 nextcloud php /config/www/nextcloud/occ preview:generate-all -vvv
+
 4. 
