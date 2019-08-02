@@ -10,7 +10,7 @@ services:
             - PGID=1000
             - TZ=Europe/Riga
             - URL=eizvertins.com
-            - SUBDOMAINS=cloud,monitor,edgars
+            - SUBDOMAINS=cloud,monitor,edgars,diana
             - VALIDATION=http 
             - EMAIL=eizvertins.edgars@gmail.com
         volumes:
@@ -65,3 +65,16 @@ services:
             - url=https://edgars.eizvertins.com
         volumes:
             - /home/pi/docker-volumes/ghost/edgars:/var/lib/ghost/content
+    ghost-diana:
+        image: ghost
+        container_name: ghost-diana
+        restart: unless-stopped
+        ports:
+            - 3002:2368
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Riga
+            - url=https://diana.eizvertins.com
+        volumes:
+            - /home/pi/docker-volumes/ghost/diana:/var/lib/ghost/content
