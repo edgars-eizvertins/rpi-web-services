@@ -2,9 +2,9 @@
 
 echo "Starting backup"
 
-REMOTE_PATH=//TvRaspberry/Shared
+REMOTE_PATH=//tv-box/data/shared
 REMOTE_FOLDER=web-server
-LOCAL_PATH=/home/pi/backup/tv-raspberry
+LOCAL_PATH=/home/pi/backup
 
 BACKUP_FOLDER=/home/pi/docker-volumes
 BACKUP_FILE_NAME=web_server_volumes_$(date +%Y%m%d)_$(date +%H%M).tgz
@@ -13,7 +13,7 @@ BACKUP_FILE_NAME=web_server_volumes_$(date +%Y%m%d)_$(date +%H%M).tgz
 FULL_LOCAL_PATH=$LOCAL_PATH/$REMOTE_FOLDER
 
 echo "Mounting external drive..."
-sudo mount -t cifs -o username=pi,password=raspberryPass001ihbapn,file_mode=0777,dir_mode=0777 $REMOTE_PATH $LOCAL_PATH 
+sudo mount -t cifs -o username=osmc,password=osmc,file_mode=0777,dir_mode=0777 $REMOTE_PATH $LOCAL_PATH 
 
 sleep 5
 
