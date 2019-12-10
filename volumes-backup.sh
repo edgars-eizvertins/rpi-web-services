@@ -2,7 +2,7 @@
 
 echo "Starting backup"
 
-REMOTE_PATH=//tv-box/data/shared
+REMOTE_PATH=//tv-box/MyPassport/shared
 REMOTE_FOLDER=web-server
 LOCAL_PATH=/home/pi/backup
 
