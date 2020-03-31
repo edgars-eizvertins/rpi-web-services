@@ -10,7 +10,7 @@ services:
             - PGID=1000
             - TZ=Europe/Riga
             - URL=eizvertins.com
-            - SUBDOMAINS=cloud,monitor,edgars,diana,torrent
+            - SUBDOMAINS=cloud,monitor,edgars,diana,torrent,camera
             - VALIDATION=http 
             - EMAIL=eizvertins.edgars@gmail.com
         volumes:
